@@ -45,4 +45,4 @@ apt install -y vim
 apt install -y oracle-java8-installer oracle-java8-unlimited-jce-policy oracle-java8-set-default
 apt install -y nodejs
 apt install -y apt-transport-https ca-certificates curl software-properties-common
-apt install -y docker-ce docker-compose
+apt install -y docker docker-compose
