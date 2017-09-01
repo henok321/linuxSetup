@@ -46,3 +46,12 @@ apt install -y oracle-java8-installer oracle-java8-unlimited-jce-policy oracle-j
 apt install -y nodejs
 apt install -y apt-transport-https ca-certificates curl software-properties-common
 apt install -y docker docker-compose
+apt install -y atom
+
+# sdkman
+curl -s "https://get.sdkman.io" | bash
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+sdk install groovy
+sdk install maven
+sdk install gradle
+sdk install leiningen
