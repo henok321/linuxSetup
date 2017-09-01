@@ -14,6 +14,8 @@ add-apt-repository ppa:git-core/ppa -y
 
 # oracle jdk
 add-apt-repository ppa:webupd8team/java -y
+echo debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections
+echo debconf shared/accepted-oracle-license-v1-1 seen true | sudo debconf-set-selections
 
 #atom
 add-apt-repository ppa:webupd8team/atom -y
