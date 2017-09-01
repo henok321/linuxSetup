@@ -10,7 +10,7 @@ fi
 # add ppa's and sources
 
 # git
-add-apt-repository ppa:git-core/ppa
+add-apt-repository ppa:git-core/ppa -y
 
 # oracle jdk
 add-apt-repository ppa:webupd8team/java -y
@@ -28,7 +28,11 @@ curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 # docker
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
+# update
+apt update
+apt dist-upgrade -y
 
+# install
 apt install -y build-essential
 apt install -y python python3
 apt install -y git
