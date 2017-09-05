@@ -71,3 +71,4 @@ apt install -y nodejs
 apt install -y apt-transport-https ca-certificates curl software-properties-common
 apt install -y docker-ce docker-compose
 apt install -y atom
+apt install -y google-chrome-stable
