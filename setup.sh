@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 
+if [[ $EUID -ne 0 ]]; then
+  echo "Run as root!"
+  exit 1
+fi
+
+echo "Enter unix user:"
+read -r user
+
 echo "Start Setup (y/n):"
 read input
 
@@ -51,23 +59,15 @@ apt update
 apt dist-upgrade -y
 
 # install
-apt install -y build-essential apt-transport-https ca-certificates curl software-properties-common
-apt install -y python python3
+apt install -y build-essential
+apt install -y python python3 python3-pip python-pip
 apt install -y git
 apt install -y gitg
 apt install -y git-cola
 apt install -y kdiff3
-apt install -y vim
+apt install -y vim tmux bmon htop screen
 apt install -y oracle-java8-installer oracle-java8-unlimited-jce-policy oracle-java8-set-default
 apt install -y nodejs
 apt install -y apt-transport-https ca-certificates curl software-properties-common
 apt install -y docker-ce docker-compose
 apt install -y atom
-
-# sdkman
-curl -s "https://get.sdkman.io" | bash
-source "$HOME/.sdkman/bin/sdkman-init.sh"
-sdk install groovy
-sdk install maven
-sdk install gradle
-sdk install leiningen
