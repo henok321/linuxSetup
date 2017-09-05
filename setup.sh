@@ -5,9 +5,6 @@ if [[ $EUID -ne 0 ]]; then
   exit 1
 fi
 
-echo "Enter unix user:"
-read -r user
-
 echo "Start Setup (y/n):"
 read input
 
