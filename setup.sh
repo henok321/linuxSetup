@@ -30,12 +30,28 @@ curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 # docker
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
+os=$(lsb_release -cs)
+
+declare -a mint=("sonya" "serena" "sarah")
+
+for e in "${mint[@]}"
+do
+  if [[ "$e" == "$os" ]]; then
+    os="xenial"
+  fi
+done
+
+sudo add-apt-repository \
+"deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $os \
+stable"
+
 # update
 apt update
 apt dist-upgrade -y
 
 # install
-apt install -y build-essential
+apt install -y build-essential apt-transport-https ca-certificates curl software-properties-common
 apt install -y python python3
 apt install -y git
 apt install -y gitg
@@ -45,7 +61,7 @@ apt install -y vim
 apt install -y oracle-java8-installer oracle-java8-unlimited-jce-policy oracle-java8-set-default
 apt install -y nodejs
 apt install -y apt-transport-https ca-certificates curl software-properties-common
-apt install -y docker docker-compose
+apt install -y docker-ce docker-compose
 apt install -y atom
 
 # sdkman
