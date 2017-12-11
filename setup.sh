@@ -69,3 +69,4 @@ apt install -y apt-transport-https ca-certificates curl software-properties-comm
 apt install -y docker-ce docker-compose
 apt install -y atom
 apt install -y google-chrome-stable
+apt install -y keychain
