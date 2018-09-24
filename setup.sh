@@ -18,7 +18,8 @@ apt update
 apt dist-upgrade -y
 
 # install
-apt install -y build-essential
+apt install -y build-essential cmake
+apt install -y python-dev python3-dev
 apt install -y python python3 python3-pip python-pip
 apt install -y git
 apt install -y gitg
