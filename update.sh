@@ -4,6 +4,7 @@
 
 apt update
 apt dist-upgrade -y
+ukuu --purge-old-kernels
 apt autoremove -y
 apt autoclean -y
 purge-old-kernels
